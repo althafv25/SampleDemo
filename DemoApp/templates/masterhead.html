@@ -1,0 +1,38 @@
+<div class="row home-search">
+
+
+
+
+
+	    <div class="finder col-sm-12 col-md-6 col-md-offset-3">
+
+        <form action="/recipes/search/" method="post">{% csrf_token %}
+
+
+
+		<div class="row">
+			<div class="search-address col-sm-9">
+
+				<input id="searchtext" name="searchtext" type="text" class="form-control input-lg" placeholder="Enter your recipe"  >
+			</div>
+
+
+			<div class="search-btn col-sm-3">
+				<button id="submit-search-button" class="btn btn-action btn-lg">Search</button>
+			</div>
+		</div>
+         </form>
+
+	</div>
+
+{#<form action="/recipes/search/" method="POST"> {% csrf_token %}#}
+{#    <div data-role="fieldcontain">#}
+{#        <label for="email">Email:</label><input type="text" name="searchtext" id="searchtext" value="" />#}
+{#    </div>#}
+{#    <div data-role="fieldcontain">#}
+{#        <label for="password">Password:</label><input type="password" name="password" id="password" value="" />#}
+{#    </div>#}
+{#    <button type="submit" name="submit" value="submit-value">Sign up</button>#}
+{#</form>#}
+
+</div>

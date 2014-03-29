@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{% block title %}FoodtoEat | Order Food Online | Pickup &amp; Deliveries | Restaurants &amp; Food Trucks{% endblock title %}</title>
+
+		{% block meta %}
+			<meta charset="utf-8"/>
+			<meta name="description" content="FoodtoEat.com is an online food ordering and delivery service based in New York City specializing in food trucks and restaurants, allowing users to skip the line and easily place orders for delivery or pick-up."/>
+			<meta name="keywords" content="food, eat, restaurants, food trucks, trucks, new york, new york city, nyc, falafel, halal, order online, order, delivery, manhattan, midtown,"/>
+
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		{% endblock meta %}
+
+		{% block head %}
+
+			<link rel="shortcut icon" href="{{STATIC_URL}}favicon.png"/>
+			<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}base/css/base.css"/>
+
+			<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|Fredoka+One|Varela"/>
+
+
+		{% endblock head %}
+
+
+
+
+
+
+	</head>
+
+	<body>
+		<div id="st-container" class="st-container">
+
+
+			<!-- content push wrapper -->
+				<div class="st-pusher">
+				<div class="st-content" style="background-image: url('{{ STATIC_URL }}base/img/st-background.png'); background-attachment: local">
+					<div class="st-content-inner">
+						<div class="error error-site" style="display:none">
+							<span class="error-text"></span>
+	                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-cancel"></i></button>
+	                    </div>
+
+						<div class="main clearfix">
+							<div class="logo">
+								<a href=""><img src="{{STATIC_URL}}base/img/logo.png" alt="FoodtoEat"></a>
+							</div>
+							<div id="masthead" class="masthead row">
+
+                                    <ul class="nav navbar-nav navbar-right {% if user.is_authenticated %}nav-logged{% endif %}">
+			                            {% if user.is_authenticated %}
+				                            <li class="column st-trigger-effects">
+                                            <span class="welcome-text">Welcome back, </span>
+                                            <a class="btn-st link-st link-user" data-effect="st-reveal">
+                                                {% if user.first_name %}
+                                                    {{ user.first_name }}
+                                                {% else %}
+                                                    {{ user.email }}
+                                                {% endif %}
+                                            </a>
+                                        </li>
+                                        {% else %}
+
+                                            <li class="column st-trigger-effects">
+                                                <a href="/account/signup/">Register</a>
+
+                                            </li>
+                                        {% endif  %}
+		                            </ul>
+
+							</div><!-- /masthead -->
+
+							<div id="main-content" style="margin: 2%"  >
+								{% block content %}
+									<div class="container">
+										<h1>Empty page!</h1>
+									</div>
+								{% endblock content %}
+							</div>
+
+							{% include "footer.html"%}
+
+						</div><!-- /main -->
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+
+
+
+
+
+
+
+	</body>
+</html>

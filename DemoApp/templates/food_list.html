@@ -1,0 +1,29 @@
+ {% extends "base.html" %}
+ {% block title %}Food list{% endblock %}
+ {% block content %}
+
+
+
+     <div class="row" >
+        {% if documents %}
+
+                {% for document in documents %}
+                     <div class="col-sm-6 col-md-2">
+                    <div class="thumbnail">
+
+{#                        <a href="/recipes/recipeDetails/">{{ document.background_image.name }}</a>#}
+                     <a href="/recipes/recipeDetails/{{ document.id }}"><img src="{{ document.background_image.url }}" width="200px" height="200px" /></a>
+                      <p>{{ document.name }}</p>
+                     </div>
+                    </div>
+
+
+                {% endfor %}
+
+        {% else %}
+            <p>No documents.</p>
+        {% endif %}
+
+
+     </div>
+{% endblock %}

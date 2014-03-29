@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block mast_head %}
+
+	<div id="home-container">
+		{% include "masterhead.html" %}
+	</div>
+{% endblock mast_head %}
+
+{% block content %}
+    <div id="home-container">
+		{% include "masterhead.html" %}
+	</div>
+
+
+
+<a href="/recipes/food/" class="col-md-12 col-md-offset-11"><h3>See All</h3></a>
+
+{#    <div class="result " style="clear: both; margin-left: 150px; margin-right: auto; position: relative; overflow: hidden;">#}
+<div class="row" >
+
+
+        {% if documents %}
+
+            {% for document in documents %}
+                <div class="col-sm-6 col-md-2">
+                <div class="thumbnail">
+
+
+                <a href="/recipes/recipeDetails/{{ document.id }}">
+
+                 <img src="{{ document.background_image.url }}"   style="height: 200px; width: 200px; display: block;">
+
+
+                <div class="caption">
+                <h3>{{ document.name }}</h3>
+                </div>
+                     </a>
+                </div>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+
+
+</div>
+
+{% endblock %}
