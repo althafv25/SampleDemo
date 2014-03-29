@@ -59,8 +59,8 @@ def list(request):
 
 def recipeDetails(request, num=0):
 
+    documents = Recipe.objects.filter(cuisines=1)
 
-    documents = Recipe.objects.all()
     cuisinedetails=Cuisine.objects.get(id=num)
 
     ctx = RequestContext(request, {

@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block title %} Food Details{% endblock %}
 {% block content %}
-<p>This is it</p>
+
 
     <div class="result " style="clear: both; margin-left: 150px;  margin-right: 150px; position: relative; overflow: hidden;">
-        {{ cuisinedetails.name }}
-         <img src="{{ cuisinedetails.background_image.url }}"  >
+        <div class="row">
+         <div class="col-xs-12 col-sm-3"><img src="{{ cuisinedetails.background_image.url }}"  class="img-thumbnail" ></div>
 
+         <div class="col-xs-12 col-sm-4"><h2>{{ cuisinedetails.name }}</h2></div>
+        </div>
         {% if documents %}
 
 
@@ -14,8 +16,16 @@
 
                 {% for document in documents %}
 
-                    <p>{{ document.name }}</p>
-                    {{ document.description | safe }}
+
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">{{ document.name }}</h3>
+                      </div>
+                      <div class="panel-body">
+                         {{ document.description | safe }}
+                      </div>
+                    </div>
 
 
                 {% endfor %}

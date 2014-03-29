@@ -13,5 +13,6 @@ urlpatterns = patterns('',
     url(r'^signup_in/', 'DemoApp.views.sign_up_in'),
     url(r'^signup/', 'DemoApp.views.sign_up'),
     url(r'^$', 'DemoApp.views.secured'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
 
 )

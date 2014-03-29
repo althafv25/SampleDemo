@@ -45,28 +45,33 @@
 
 						<div class="main clearfix">
 							<div class="logo">
-								<a href=""><img src="{{STATIC_URL}}base/img/logo.png" alt="FoodtoEat"></a>
+								<a href="/"><img src="{{STATIC_URL}}base/img/logo.png" alt="FoodtoEat"></a>
 							</div>
 							<div id="masthead" class="masthead row">
 
                                     <ul class="nav navbar-nav navbar-right {% if user.is_authenticated %}nav-logged{% endif %}">
 			                            {% if user.is_authenticated %}
 				                            <li class="column st-trigger-effects">
+
                                             <span class="welcome-text">Welcome back, </span>
-                                            <a class="btn-st link-st link-user" data-effect="st-reveal">
-                                                {% if user.first_name %}
-                                                    {{ user.first_name }}
-                                                {% else %}
+
+                                                <a class="btn-st link-st link-user" data-effect="st-reveal" href="/account/logout/">
                                                     {{ user.email }}
-                                                {% endif %}
-                                            </a>
+                                                </a>
+
+
                                         </li>
                                         {% else %}
-
+                                            <li>
+                                                <a href="/account/login/" >
+                                                     Login
+                                                </a>
+                                            </li>
                                             <li class="column st-trigger-effects">
                                                 <a href="/account/signup/">Register</a>
 
                                             </li>
+
                                         {% endif  %}
 		                            </ul>
 
