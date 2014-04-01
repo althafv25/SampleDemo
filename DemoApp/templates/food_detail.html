@@ -11,12 +11,10 @@
         </div>
         {% if documents %}
 
-
-            {{ documents.description }}
+             {{ documents.description }}
 
                 {% for document in documents %}
-
-
+                    <div style="color: steelblue">You are rating {{ document.name}} (Rating <span id="curRating">{{ document.rating_score }}</span> / 5.0 from {{ document.rating_votes }} users)</div>
 
                     <div class="panel panel-default">
                       <div class="panel-heading">
