@@ -16,7 +16,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 2.7.3(ssh://vagrant@127.0.0.1:2222/home/vagrant/.virtualenvs/demo/bin/python2.7)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 2.7.3(ssh://vagrant@127.0.0.1:2200/home/vagrant/.virtualenvs/demo/bin/python2.7)" project-jdk-type="Python SDK" />
   <component name="masterDetails">
     <states>
       <state key="ScopeChooserConfigurable.UI">
